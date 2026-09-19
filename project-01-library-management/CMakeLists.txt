@@ -13,6 +13,7 @@ add_executable(library-management
   src/main.cpp
   src/Book.cpp
   src/Library.cpp
+  src/utils.cpp
 )
 
 target_include_directories(library-management
