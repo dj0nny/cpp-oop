@@ -34,6 +34,19 @@ std::string_view Book::get_rent_status() const {
   return to_string_rent_status(rent_status);
 }
 
+BookStatus Book::get_rent_status_code() const {
+  return rent_status;
+}
+
+void Book::set_as_borrowed() {
+  rent_status = BookStatus::NotAvailable;
+};
+
+void Book::set_as_not_borrowed() {
+  rent_status = BookStatus::Available;
+};
+
 std::ostream& operator<<(std::ostream& os, const Book& book) {
   return os << book.get_id() << ", " << book.get_title() << ", " << book.get_author() << ", " << book.get_year() << ", " << book.get_rent_status();
 }
+

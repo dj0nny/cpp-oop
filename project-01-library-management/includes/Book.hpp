@@ -24,6 +24,10 @@ class Book {
     std::string_view get_author() const;
     int get_year() const;
     std::string_view get_rent_status() const;
+    BookStatus get_rent_status_code() const;
+
+    void set_as_borrowed();
+    void set_as_not_borrowed();
 };
   
 std::ostream& operator<<(std::ostream& os, const Book& book);

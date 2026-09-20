@@ -1,6 +1,7 @@
 #include <iostream>
 #include <limits>
 #include <string_view>
+#include <algorithm>
 
 #include "utils.hpp"
 
@@ -37,29 +38,40 @@ int menu_selection() {
 }
 
 void handle_menu_selection(int choice, Library& my_library) {
-  switch (to_menu_actions(choice)) {
+  MenuActions choice_action {to_menu_actions(choice)};
+
+  switch (choice_action) {
     case MenuActions::AddBook:
       my_library.insert_book(read_book());
       break;
     case MenuActions::ShowBooks:
       my_library.show_books();
       break;
-    case MenuActions::SearchBook:
-      std::cout << "Search books" << '\n';
+    case MenuActions::SearchBook: {
+      my_library.search_books();
       break;
-    case MenuActions::RentBook:
-      std::cout << "Rent a book" << '\n';
-      break;
-    case MenuActions::ReturnBook:
-      std::cout << "Return a book" << '\n';
-      break;
-    case MenuActions::DeleteBook: {
+    }
+    case MenuActions::RentBook: case MenuActions::ReturnBook: case MenuActions::DeleteBook: {
       int book_id {read_book_id()};
-      if (my_library.delete_book(book_id))
-        std::cout << "Book deleted." << "\n\n";
-      else
-        std::cout << "Book not found or there are books in the library." << "\n\n";
-      break;
+
+      if (choice_action == MenuActions::RentBook) {
+        if (my_library.register_book_borrow(book_id))
+          std::cout << "Book borrowed" << "\n\n";
+        else
+          std::cout << "Book already borrowed or cannot find the book" << "\n\n";
+      } else if (choice_action == MenuActions::ReturnBook) {
+        if (my_library.register_book_return(book_id))
+          std::cout << "Book returned" << "\n\n";
+        else
+          std::cout << "Book already in the library or cannot find the book" << "\n\n";
+      } else {
+        if (my_library.delete_book(book_id))
+          std::cout << "Book deleted." << "\n\n";
+        else
+          std::cout << "Book not found or there are books in the library." << "\n\n";
+          
+        break;
+      }
     }
     case MenuActions::StatusBooks:
       my_library.show_books_status();
@@ -134,6 +146,10 @@ bool valid_book_status(int book_status_code) {
   return book_status_code == 0 || book_status_code == 1;
 }
 
+bool valid_search_method(int search_method_code) {
+  return search_method_code >= 1 && search_method_code <= 4;
+}
+
 int read_book_id() {
   int book_id {};
   
@@ -148,13 +164,90 @@ int read_book_id() {
 
     return book_id;
   }
+}
 
+std::string read_book_title() {
+  std::cout << "Enter the book title: ";
+  std::string book_title {};
+  std::getline(std::cin >> std::ws, book_title);
+
+  return book_title;
+}
+
+std::string read_book_author() {
+  std::cout << "Enter the book author: ";
+  std::string book_author {};
+  std::getline(std::cin >> std::ws, book_author);
+
+  return book_author;
 }
 
 MenuActions to_menu_actions(int choice_code) {
   return static_cast<MenuActions>(choice_code);
 }
 
+int read_book_year() {
+  int book_year {};
+  
+  while (true) {
+    std::cout << "Enter the book year: ";
+    std::cin >> book_year;
+
+    if (std::cin.fail()) {
+      handle_invalid_input(std::cin);
+      continue;
+    }
+
+    return book_year;
+  }
+}
+
 std::string_view to_string_rent_status(BookStatus book_status) {
   return book_status == BookStatus::NotAvailable ? "Not Available" : "Available";
+}
+
+std::string to_lowercase_string(std::string_view s) {
+  std::string lowercase_string(s.length(), '\0');
+
+  std::transform(s.begin(), s.end(), lowercase_string.begin(), [](unsigned char c) {
+    return std::tolower(c);
+  });
+
+  return lowercase_string;
+}
+
+SearchMethods to_search_methods(int search_method_code) {
+  return static_cast<SearchMethods>(search_method_code);
+}
+
+std::vector<Book>::iterator search_book_by_id(int book_id, std::vector<Book>& books) {
+  auto find_item_iterator {std::find_if(books.begin(), books.end(), [book_id](const Book& current_book) {
+    return book_id == current_book.get_id();
+  })};
+
+  return find_item_iterator;
+}
+
+std::vector<Book>::iterator search_book_by_title(std::string_view book_title, std::vector<Book>& books) {
+  auto find_item_iterator {std::find_if(books.begin(), books.end(), [book_title](const Book& current_book) {
+    return to_lowercase_string(book_title) == to_lowercase_string(current_book.get_title());
+  })};
+
+  return find_item_iterator;
+}
+
+std::vector<Book>::iterator search_book_by_author(std::string_view book_author, std::vector<Book>& books) {
+   auto find_item_iterator {std::find_if(books.begin(), books.end(), [book_author](const Book& current_book) {
+    return to_lowercase_string(book_author) == to_lowercase_string(current_book.get_author());
+  })};
+
+  return find_item_iterator;
+}
+
+std::vector<Book>::iterator search_book_by_year(int book_year, std::vector<Book>& books) {
+  auto find_item_iterator {std::find_if(books.begin(), books.end(), [book_year](const Book& current_book) {
+    return book_year == current_book.get_year();
+  })};
+
+  return find_item_iterator;
 }
