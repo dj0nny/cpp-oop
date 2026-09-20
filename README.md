@@ -6,7 +6,7 @@ A collection of C++ projects focused on OOP.
 
 | #  | Project   | Description                                | Status          |
 | -- | --------- | ------------------------------------------ | --------------- |
-| 01 | Library Management | A command-line library management application | 🚧 In progress |
+| 01 | Library Management | A command-line library management application | ✅ Completed |
 | 02 | — | —     | —                                           | ⏳ Planned     |
 | 03 | — | —     | —                                           | ⏳ Planned     |
 | 04 | — | —     | —                                           | ⏳ Planned     |
