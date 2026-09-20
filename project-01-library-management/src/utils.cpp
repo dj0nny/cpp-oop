@@ -14,6 +14,11 @@ int menu_selection() {
   std::cout << "║══════════════════════════════════════║\n";
   std::cout << "║ 1. Add a book                        ║\n";
   std::cout << "║ 2. Show books collection             ║\n";
+  std::cout << "║ 3. Search a book                     ║\n";
+  std::cout << "║ 4. Register a rent                   ║\n";
+  std::cout << "║ 5. Return a book                     ║\n";
+  std::cout << "║ 6. Delete a book                     ║\n";
+  std::cout << "║ 7. Show books status                 ║\n";
   std::cout << "║ 0. Exit                              ║\n";
   std::cout << "╚══════════════════════════════════════╝\n\n";
   
@@ -38,6 +43,26 @@ void handle_menu_selection(int choice, Library& my_library) {
       break;
     case MenuActions::ShowBooks:
       my_library.show_books();
+      break;
+    case MenuActions::SearchBook:
+      std::cout << "Search books" << '\n';
+      break;
+    case MenuActions::RentBook:
+      std::cout << "Rent a book" << '\n';
+      break;
+    case MenuActions::ReturnBook:
+      std::cout << "Return a book" << '\n';
+      break;
+    case MenuActions::DeleteBook: {
+      int book_id {read_book_id()};
+      if (my_library.delete_book(book_id))
+        std::cout << "Book deleted." << "\n\n";
+      else
+        std::cout << "Book not found or there are books in the library." << "\n\n";
+      break;
+    }
+    case MenuActions::StatusBooks:
+      my_library.show_books_status();
       break;
     case MenuActions::Exit:
       exit(EXIT_SUCCESS);
@@ -70,6 +95,11 @@ Book read_book() {
       continue;
     }
 
+    if (book_year < 0) {
+      std::cout << "Invalid book year" << '\n';
+      continue;
+    }
+
     break;
   }
 
@@ -95,13 +125,30 @@ Book read_book() {
     break;
   }
 
-  Book new_book(1, book_title, book_author, book_year, book_status);
+  Book new_book(book_title, book_author, book_year, book_status);
 
   return new_book;
 }
 
 bool valid_book_status(int book_status_code) {
   return book_status_code == 0 || book_status_code == 1;
+}
+
+int read_book_id() {
+  int book_id {};
+  
+  while (true) {
+    std::cout << "Enter the book id: ";
+    std::cin >> book_id;
+
+    if (std::cin.fail()) {
+      handle_invalid_input(std::cin);
+      continue;
+    }
+
+    return book_id;
+  }
+
 }
 
 MenuActions to_menu_actions(int choice_code) {

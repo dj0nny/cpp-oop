@@ -14,8 +14,10 @@ class Book {
     std::string author;
     int year;
     BookStatus rent_status;
+
+    int generate_book_id() const;
   public:
-    explicit Book(int book_id, std::string_view book_title, std::string_view book_author, int book_year, BookStatus book_rent_status);
+    explicit Book(std::string_view book_title, std::string_view book_author, int book_year, BookStatus book_rent_status);
 
     int get_id() const;
     std::string_view get_title() const;

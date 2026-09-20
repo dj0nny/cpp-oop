@@ -5,6 +5,11 @@ enum class MenuActions {
   Exit,
   AddBook,
   ShowBooks,
+  SearchBook,
+  RentBook,
+  ReturnBook,
+  DeleteBook,
+  StatusBooks,
 };
 
 #endif

@@ -19,7 +19,7 @@ class Library {
     bool register_book_rent(int book_id);
     bool register_book_return(int book_id);
     bool delete_book(int book_id);
-    void show_books_status(int book_id);
+    void show_books_status();
   };
 
 #endif

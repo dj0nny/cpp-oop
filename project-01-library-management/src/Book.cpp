@@ -4,9 +4,15 @@
 #include "Book.hpp"
 #include "utils.hpp"
 
-Book::Book(int book_id, std::string_view book_title, std::string_view book_author, int book_year, BookStatus book_rent_status)
-  : id {book_id}, title {book_title}, author {book_author}, year {book_year}, rent_status {book_rent_status}
+Book::Book(std::string_view book_title, std::string_view book_author, int book_year, BookStatus book_rent_status)
+  : id {generate_book_id()}, title {book_title}, author {book_author}, year {book_year}, rent_status {book_rent_status}
   {};
+
+int Book::generate_book_id() const {
+  static int id {0};
+
+  return ++id;
+}
 
 int Book::get_id() const {
   return id;
