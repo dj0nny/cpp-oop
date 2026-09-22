@@ -1,21 +1,33 @@
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
+#include <ostream>
+
 #include <string>
+#include <string_view>
 
 class Animal {
-  private:
+  protected:
     int id;
     std::string name;
     int age;
     std::string species;
+
+    int generate_id() const;
+
   public:
-    Animal(int animal_id, std::string animal_name, int animal_age, std::string anima_species);
+    explicit Animal(std::string_view animal_name, int animal_age, std::string_view animal_species);
 
-    virtual void make_sound() const;
-    virtual void make_action() const;
+    std::string_view get_animal_name() const;
+    int get_animal_age() const;
+    std::string_view get_animal_species() const;
 
-    virtual ~Animal();
+    virtual void make_sound() const = 0;
+    virtual void make_action() const = 0;
+
+    virtual ~Animal() = default;
 };
+
+std::ostream& operator<<(std::ostream& os, const Animal* animal);
 
 #endif

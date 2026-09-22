@@ -11,6 +11,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(animal-management
   src/main.cpp
+  src/utils.cpp
+  src/Animal.cpp
+  src/Dog.cpp
+  src/Cat.cpp
+  src/Bird.cpp
 )
 
 target_include_directories(animal-management
