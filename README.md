@@ -7,7 +7,7 @@ A collection of C++ projects focused on OOP.
 | #  | Project   | Description                                | Status          |
 | -- | --------- | ------------------------------------------ | --------------- |
 | 01 | Library Management | A command-line library management application | ✅ Completed |
-| 02 | Animal Management System | A command-line animal management application | ✅ In progress |
+| 02 | Animal Management System | A command-line animal management application | ✅ Completed |
 <!-- | 03 | — | —     | —                                           | ⏳ Planned     |
 | 04 | — | —     | —                                           | ⏳ Planned     |
 | 05 | — | —     | —                                           | ⏳ Planned     |
