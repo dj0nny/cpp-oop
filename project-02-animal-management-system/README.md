@@ -10,9 +10,7 @@ The application allows the user to:
 
 * Add a new animal
 * Display all animals
-* Search for an animal
 * Make an animal perform its specific behavior
-* Remove an animal
 * Exit the application
 
 The application manages different types of animals through a common interface.
@@ -116,4 +114,4 @@ The project may be reorganized into additional source and header files if the im
 
 ## Status
 
-🚧 In Progress
+✅ In Progress
