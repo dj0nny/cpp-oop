@@ -6,10 +6,10 @@ A collection of C++ projects focused on OOP.
 
 | #  | Project   | Description                                | Status          |
 | -- | --------- | ------------------------------------------ | --------------- |
-| 01 | Library Management | A command-line library management application | ✅ Completed |
-| 02 | Animal Management System | A command-line animal management application | ✅ Completed |
-<!-- | 03 | — | —     | —                                           | ⏳ Planned     |
-| 04 | — | —     | —                                           | ⏳ Planned     |
+| 01 | Library Management System | A command-line library management application | ✅ Completed   |
+| 02 | Animal Management System  | A command-line animal management application  | ✅ Completed   |
+| 03 | Banking Management System | A command-line banking management application | 🚧 In progress |
+<!-- | 04 | — | —     | —                                           | ⏳ Planned     |
 | 05 | — | —     | —                                           | ⏳ Planned     |
 | 06 | — | —     | —                                           | ⏳ Planned     |
 | 07 | — | —     | —                                           | ⏳ Planned     |
