@@ -7,7 +7,7 @@ CheckingAccount::CheckingAccount(std::string_view account_owner, double account_
 bool CheckingAccount::deposit(double amount) {
   const double net_deposit {amount - deposit_fee};
 
-  if (deposit_fee > 0) {
+  if (net_deposit > 0) {
     balance += net_deposit;
     return true;
   }

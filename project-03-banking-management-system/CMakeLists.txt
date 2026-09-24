@@ -11,6 +11,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(banking-management
   src/main.cpp
+  src/Account.cpp
+  src/CheckingAccount.cpp
+  src/InvestmentAccount.cpp
+  src/SavingsAccount.cpp
 )
 
 target_include_directories(banking-management

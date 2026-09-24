@@ -15,6 +15,9 @@ class CheckingAccount : public Account {
     bool deposit(double amount) override;
     bool withdraw(double amount) override;
     void process_monthly_fee();
+
+    ~CheckingAccount() override = default;
+
 };
 
 #endif

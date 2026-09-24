@@ -6,7 +6,8 @@ A command-line banking management application written in C++.
 
 ## Features
 
-The application allows the user to:
+Work in progress...
+<!-- The application allows the user to:
 
 * Create a new bank account
 * Display all accounts
@@ -20,7 +21,7 @@ The application allows the user to:
 
 The application manages different types of bank accounts through a common interface.
 
-Each account has a unique ID, an owner, a balance, and a specific account type.
+Each account has a unique ID, an owner, a balance, and a specific account type. -->
 
 ---
 

@@ -1,6 +1,7 @@
 #ifndef ACCOUNT_HPP
 #define ACCOUNT_HPP
 
+#include <iostream>
 #include <string>
 #include <string_view>
 
@@ -21,8 +22,14 @@ class Account {
     void show_balance() const;
     void display_account_informations() const;
 
+    std::string get_owner() const;
+    double get_balance() const;
+    std::string get_account_type() const;
+
     virtual ~Account() = default;
 
 };
+
+std::ostream& operator<<(std::ostream& os, const Account& account);
 
 #endif
