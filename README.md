@@ -6,10 +6,9 @@ A collection of C++ projects focused on OOP and advanced ownership strategies.
 
 | #  | Project   | Description                                | Level          | Status          |
 | -- | --------- | ------------------------------------------ | --------------- | --------------- |
-| 01 | Digital Library | A command-line library management application | Beginner | 🚧 In progress   |
-<!--
-| 02 | — | —     | —                                           | ⏳ Planned     |
-| 03 | — | —     | —                                           | ⏳ Planned     |
+| 01 | Digital Library | A command-line library management application | Beginner | ✅ Completed |
+| 02 | Battle Arena | A command-line battle arena application | Beginner | 🚧 In progress |
+<!--| 03 | — | —     | —                                           | ⏳ Planned     |
 | 04 | — | —     | —                                           | ⏳ Planned     |
 | 05 | — | —     | —                                           | ⏳ Planned     |
 | 06 | — | —     | —                                           | ⏳ Planned     |
