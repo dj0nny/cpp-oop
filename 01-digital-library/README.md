@@ -78,7 +78,7 @@ cmake --build build
 Git Bash:
 
 ```bash
-./build/digital-library.cpp
+./build/digital-library.exe
 ```
 
 ---

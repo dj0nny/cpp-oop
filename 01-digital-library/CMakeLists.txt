@@ -11,6 +11,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(digital-library
   src/main.cpp
+  src/Book.cpp
+  src/Library.cpp
+  src/Menu.cpp
 )
 
 target_include_directories(digital-library
