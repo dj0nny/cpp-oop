@@ -24,8 +24,4 @@ void Character::take_damage(int damage) {
 
 bool Character::is_alive() const { return m_health > 0; }
 
-void Character::display_status() const {
-  std::cout << "Character name: " << m_name << '\n';
-  std::cout << "Health: " << m_health << '\n';
-  std::cout << "Attack power: " << m_attack_power << '\n';
-};
+void Character::display_status() const { std::cout << "Character name: " << m_name << " | Health: " << m_health << " | Attack power: " << m_attack_power << '\n'; };

@@ -11,6 +11,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(battle-arena
   src/main.cpp
+  src/Character.cpp
+  src/Mage.cpp
+  src/Archer.cpp
+  src/CombatSystem.cpp
 )
 
 target_include_directories(battle-arena

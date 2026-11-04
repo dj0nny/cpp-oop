@@ -12,5 +12,5 @@ class Warrior : public Character {
   int get_defense() const;
 
   void take_damage(int) override;
-  void attack(Character&) const override;
+  void attack(Character&) override;
 };

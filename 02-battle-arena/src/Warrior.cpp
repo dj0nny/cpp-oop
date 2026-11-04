@@ -24,4 +24,4 @@ void Warrior::take_damage(int damage) {
   }
 }
 
-void Warrior::attack(Character& other) const { other.take_damage(get_attack_power()); }
+void Warrior::attack(Character& other) { other.take_damage(get_attack_power()); }
