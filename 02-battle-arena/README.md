@@ -8,7 +8,6 @@ A command-line battle arena application.
 
 The application allows the user to:
 
-* Create character class
 * Display created characters
 * Battle
 * Display character status
