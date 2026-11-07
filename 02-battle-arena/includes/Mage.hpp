@@ -14,4 +14,5 @@ class Mage : public Character {
 
   void restore_mana(int);
   void attack(Character&) override;
+  ~Mage() override;
 };

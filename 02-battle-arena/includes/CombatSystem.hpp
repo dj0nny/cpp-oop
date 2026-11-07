@@ -9,6 +9,8 @@ class CombatSystem {
   std::vector<Character*> m_characters{};
 
  public:
+  CombatSystem() = default;
+
   CombatSystem(const CombatSystem&) = delete;
   CombatSystem& operator=(const CombatSystem&) = delete;
   CombatSystem(CombatSystem&&) = delete;

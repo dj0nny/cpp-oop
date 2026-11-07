@@ -13,4 +13,5 @@ class Warrior : public Character {
 
   void take_damage(int) override;
   void attack(Character&) override;
+  ~Warrior() override;
 };

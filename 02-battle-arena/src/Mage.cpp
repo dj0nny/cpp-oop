@@ -31,3 +31,5 @@ void Mage::attack(Character& other) {
   other.take_damage(get_attack_power());
   m_mana -= mana_cost;
 }
+
+Mage::~Mage() {}

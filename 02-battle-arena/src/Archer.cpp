@@ -31,3 +31,5 @@ void Archer::attack(Character& other) {
   other.take_damage(get_attack_power());
   m_arrows -= arrow_cost;
 }
+
+Archer::~Archer() {}

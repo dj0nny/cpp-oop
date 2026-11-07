@@ -13,4 +13,6 @@ class Archer : public Character {
   int get_arrows() const;
   void restore_arrows(int);
   void attack(Character&) override;
+
+  ~Archer() override;
 };

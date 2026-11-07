@@ -25,3 +25,5 @@ void Warrior::take_damage(int damage) {
 }
 
 void Warrior::attack(Character& other) { other.take_damage(get_attack_power()); }
+
+Warrior::~Warrior() {}
