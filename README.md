@@ -4,11 +4,11 @@ A collection of C++ projects focused on OOP and advanced ownership strategies.
 
 ## Projects
 
-| #  | Project   | Description                                | Level          | Status          |
-| -- | --------- | ------------------------------------------ | --------------- | --------------- |
-| 01 | Digital Library | A command-line library management application | Beginner | ✅ Completed |
-| 02 | Battle Arena | A command-line battle arena application | Beginner | 🚧 In progress |
-<!--| 03 | — | —     | —                                           | ⏳ Planned     |
+| #  | Project   | Description                                | Status          |
+| -- | --------- | ------------------------------------------ | --------------- |
+| 01 | Digital Library | A command-line library management application | ✅ Completed |
+| 02 | Battle Arena | A command-line battle arena application | ✅ Completed |
+| 03 | Dynamic Array | A dynamic array class replica | 🚧 In progress |
 | 04 | — | —     | —                                           | ⏳ Planned     |
 | 05 | — | —     | —                                           | ⏳ Planned     |
 | 06 | — | —     | —                                           | ⏳ Planned     |
