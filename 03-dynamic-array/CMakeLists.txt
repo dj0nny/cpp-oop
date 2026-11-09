@@ -11,6 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(dynamic-array
   src/main.cpp
+  src/DynamicArray.cpp
 )
 
 target_include_directories(dynamic-array
