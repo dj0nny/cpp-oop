@@ -53,4 +53,4 @@ Git Bash:
 
 ## Status
 
-🚧 In progress
+✅ Completed
