@@ -46,7 +46,7 @@ cmake --build build
 Git Bash:
 
 ```bash
-./build/battle-area.exe
+./build/dynamic-array.exe
 ```
 
 ---

@@ -9,6 +9,7 @@ A collection of C++ projects focused on OOP and advanced ownership strategies.
 | 01 | Digital Library | A command-line library management application | ✅ Completed |
 | 02 | Battle Arena | A command-line battle arena application | ✅ Completed |
 | 03 | Dynamic Array | A dynamic array class replica | ✅ Completed |
+| 04 | Smart Pointer Manager | Ownership-based OOP application | 🚧 In progress |
 <!--| 04 | — | —     | —                                           | 🚧 In progress |
 | 05 | — | —     | —                                           | ⏳ Planned     |
 | 06 | — | —     | —                                           | ⏳ Planned     |
