@@ -12,6 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(smart-pointer-manager
   src/main.cpp
   src/GameObject.cpp
+  src/Enemy.cpp
 )
 
 target_include_directories(smart-pointer-manager

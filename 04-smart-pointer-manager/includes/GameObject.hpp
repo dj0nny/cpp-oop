@@ -7,7 +7,7 @@ class GameObject {
   std::string m_name{};
 
  public:
-  GameObject(const std::string& name);
+  GameObject(const std::string&);
 
   const std::string& get_name() const;
 
