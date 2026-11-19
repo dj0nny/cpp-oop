@@ -1,4 +1,3 @@
-
 #include "Enemy.hpp"
 
 #include <iostream>

@@ -7,10 +7,10 @@
 
 class Scene {
  private:
-  std::vector<std::unique_ptr<GameObject>> m_object{};
+  std::vector<std::unique_ptr<GameObject>> m_objects{};
 
  public:
   void add_object(std::unique_ptr<GameObject>);
-  void remove_object(std::size_t);
+  void remove_object(int);
   void display_objects() const;
 };

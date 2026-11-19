@@ -12,7 +12,7 @@ class Player : public GameObject {
  public:
   Player(const std::string&);
 
-  void equip(std::shared_ptr<Weapon>);
+  void equip(const std::shared_ptr<Weapon>);
   void unequip();
 
   void display_status() const override;
